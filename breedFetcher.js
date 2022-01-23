@@ -1,7 +1,8 @@
 const request = require('request');
 
 let userInput = process.argv.slice(2);
-let url = 'https://api.thecatapi.com/v1/breeds/search?q=Siberian';
+
+let url = 'https://api.thecatapi.com/v1/breeds/search?q=' + userInput;
 
 request((url), (error, response, body) => {
 
@@ -16,4 +17,9 @@ request((url), (error, response, body) => {
     const data = JSON.parse(body);
     console.log(`data`, data);
     console.log(`type of data`, typeof data);
+
+
+    console.log('+++++++++++++++++++++++++++++++++++++++');
+    console.log(`first elemenet of data`, data[0]);
+
   });
