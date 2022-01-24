@@ -18,7 +18,7 @@ const fetchBreedDescription = (breedName, callback) => {
       if (data.length === 0 || data[0] === 'undefined') {
         return callback(null, 'Sorry, the requested cat cannot be found!');
       } else {
-        console.log(data[0].description);
+        return (null, data[0].description);
       }
     }
   });
